@@ -54,5 +54,13 @@ plt.ylabel('position_x [m]',fontsize=12)
 plt.grid(True)
 plt.legend(loc='upper left',fontsize='small')
 
+ax2=fig.add_subplot(gs[1,3],facecolor=(0.9,0.9,0.9))
+pos_x,=ax2.plot([],[],'b',linewidth=2,label='y = '+str(r)+'sin(2pi'+str(f)+'t)')
+plt.xlim(t0,t_end)
+plt.ylim(min(y),max(y))
+plt.ylabel('position_y [m]',fontsize=12)
+plt.grid(True)
+plt.legend(loc='upper left',fontsize='small')
+
 plt.show()
 
