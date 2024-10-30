@@ -5,6 +5,8 @@ import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
+from python_3D_motion_course import plane_ani
+
 # Time array
 t0=0
 t_end=10
@@ -55,12 +57,25 @@ plt.grid(True)
 plt.legend(loc='upper left',fontsize='small')
 
 ax2=fig.add_subplot(gs[1,3],facecolor=(0.9,0.9,0.9))
-pos_x,=ax2.plot([],[],'b',linewidth=2,label='y = '+str(r)+'sin(2pi'+str(f)+'t)')
+pos_y,=ax2.plot([],[],'b',linewidth=2,label='y = '+str(r)+'sin(2pi'+str(f)+'t)')
 plt.xlim(t0,t_end)
 plt.ylim(min(y),max(y))
 plt.ylabel('position_y [m]',fontsize=12)
 plt.grid(True)
 plt.legend(loc='upper left',fontsize='small')
 
+ax3=fig.add_subplot(gs[2,3],facecolor=(0.9,0.9,0.9))
+pos_z,=ax3.plot([],[],'b',linewidth=2,label='z = t')
+plt.xlim(t0,t_end)
+plt.ylim(min(z),max(z))
+plt.xlabel('time [s]',fontsize=12)
+plt.ylabel('position_z [m]',fontsize=12)
+plt.grid(True)
+plt.legend(loc='lower right',fontsize='small')
+
+
+
+plane_ani=animation.FuncAnimation(fig,update_plot,
+    frames=frame_amount,interval=20,repeat=False,blit=True)
 plt.show()
 
