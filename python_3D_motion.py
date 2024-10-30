@@ -26,8 +26,12 @@ z=t
 frame_amount=len(t)
 
 def update_plot(num):
+    # Trajectory
+    plane_trajectory.set_data(x[0:num],y[0:num])
+    plane_trajectory.set_3d_properties(z[0:num])
 
-    return
+
+    return plane_trajectory,
 
 # Set up the figure properties
 fig=plt.figure(figsize=(16,9),dpi=80,facecolor=(0.8,0.8,0.8))
