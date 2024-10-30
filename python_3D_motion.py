@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-from python_3D_motion_course import plane_ani
+type=2
 
 # Time array
 t0=0
@@ -16,8 +16,12 @@ t=np.arange(t0,t_end+dt,dt)
 # Create array for x & y dimensions
 r=3
 f=1
-x=r*np.cos(2*np.pi*f*t)
-y=r*np.sin(2*np.pi*f*t)
+if type==1:
+    x=r*np.cos(2*np.pi*f*t)
+    y=r*np.sin(2*np.pi*f*t)
+elif type==2:
+    x=t*np.cos(2*np.pi*f*t)
+    y=t*np.sin(2*np.pi*f*t)
 
 # Create array for z dimension
 z=t
