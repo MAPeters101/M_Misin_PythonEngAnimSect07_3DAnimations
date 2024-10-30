@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-type=4
+type=5
 
 # Time array
 t0=0
@@ -19,18 +19,29 @@ f=1
 if type==1:
     x=r*np.cos(2*np.pi*f*t)
     y=r*np.sin(2*np.pi*f*t)
+    # Create array for z dimension
+    z = t
 elif type==2:
     x=t*np.cos(2*np.pi*f*t)
     y=t*np.sin(2*np.pi*f*t)
+    # Create array for z dimension
+    z = t
 elif type==3:
     x=t**2*np.cos(2*np.pi*f*t)
     y=t**2*np.sin(2*np.pi*f*t)
+    # Create array for z dimension
+    z = t
 elif type==4:
     x=r*np.cos(2*np.pi*(f*0.2*t)*t)
     y=r*np.sin(2*np.pi*(f*0.2*t)*t)
+    # Create array for z dimension
+    z=t
+elif type==5:
+    x=r*np.cos(2*np.pi*(f)*t)
+    y=r*np.sin(2*np.pi*(f)*t)
+    # Create array for z dimension
+    z=t**2
 
-# Create array for z dimension
-z=t
 
 ############################## ANIMATION ##############################
 frame_amount=len(t)
