@@ -32,8 +32,11 @@ def update_plot(num):
     plane_trajectory.set_ydata(y[0:num])
     plane_trajectory.set_3d_properties(z[0:num])
 
+    pos_x.set_data(t[0:num],x[0:num])
+    pos_y.set_data(t[0:num],y[0:num])
+    pos_z.set_data(t[0:num],z[0:num])
 
-    return plane_trajectory,
+    return plane_trajectory,pos_x,pos_y,pos_z
 
 # Set up the figure properties
 fig=plt.figure(figsize=(16,9),dpi=80,facecolor=(0.8,0.8,0.8))
