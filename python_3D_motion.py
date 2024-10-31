@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-type=7
+type=8
 
 # Time array
 t0=0
@@ -48,6 +48,11 @@ elif type==6:
     z=t
 elif type==7:
     x=r*np.cos(2*np.pi*(f)*t)
+    y=t+r*np.sin(2*np.pi*(f)*t)
+    # Create array for z dimension
+    z=t
+elif type==8:
+    x=t+r*np.cos(2*np.pi*(f)*t)
     y=t+r*np.sin(2*np.pi*(f)*t)
     # Create array for z dimension
     z=t
